@@ -1,0 +1,23 @@
+name: Deploy Bus Ticket Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify Ansible
+        run: ansible --version
+
+      - name: Deploy application
+        run: |
+          ansible-playbook \
+            -i ansible/inventory/hosts.ini \
+            ansible/deploy.yml
