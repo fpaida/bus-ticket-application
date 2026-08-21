@@ -1,0 +1,24 @@
+---
+- name: Deploy Bus Ticket Application
+  hosts: bus_ticket_servers
+  become: yes
+
+  tasks:
+    - name: Install Apache
+      dnf:
+        name: httpd
+        state: present
+
+    - name: Start and enable Apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Deploy Bus Ticket application files
+      copy:
+        src: ../app/
+        dest: /var/www/html/
+        owner: apache
+        group: apache
+        mode: '0644'
