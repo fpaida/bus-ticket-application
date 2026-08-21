@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Enterprises - Bus Ticket Schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Richard Enterprises Bus Lines</h1>
+    <p>Bus Ticket Schedule</p>
+</header>
+
+<div class="container">
+
+    <h2>Find Your Bus</h2>
+
+    <div class="search-box">
+        <label for="destination">Destination:</label>
+
+        <select id="destination">
+            <option value="all">All Destinations</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Austin">Austin</option>
+            <option value="San Antonio">San Antonio</option>
+            <option value="New Orleans">New Orleans</option>
+        </select>
+
+        <button onclick="searchBus()">Search Schedule</button>
+    </div>
+
+    <h2>Today's Bus Schedule</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bus</th>
+                <th>From</th>
+                <th>Destination</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="schedule"></tbody>
+    </table>
+
+</div>
+
+<footer>
+    <p>Richard Enterprises Bus Lines | DevOps Training Project</p>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
